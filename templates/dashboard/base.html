@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Staff Attendance</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'dashboard/images/logo/favicon.png' %}">
+
+    <!-- page css -->
+    <link href="{% static 'dashboard/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css' %}" rel="stylesheet">
+
+    <!-- Core css -->
+    <link href="{% static 'dashboard/css/app.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="app">
+        <div class="layout">
+            <!-- Header START -->
+            <div class="header">
+                <div class="logo logo-dark">
+                    </div>
+                <div class="logo logo-white">
+                    <a href="index.html">
+                        <img src="{% static 'dashboard/images/logo/logo-white.png' %}" alt="Logo">
+                        <img class="logo-fold" src="{% static 'dashboard/images/logo/logo-fold-white.png' %}" alt="Logo">
+                    </a>
+                </div>
+                <div class="nav-wrap">
+                    <ul class="nav-left">
+                        <li class="desktop-toggle">
+                            <a href="javascript:void(0);">
+                                <i class="anticon"></i>
+                            </a>
+                        </li>
+                        <li class="mobile-toggle">
+                            <a href="javascript:void(0);">
+                                <i class="anticon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>    
+            <!-- Header END -->
+
+
+            <!-- Side Nav START -->
+            <div class="side-nav">
+                <div class="side-nav-inner">
+                    <ul class="side-nav-menu scrollable">
+                        <li class="nav-item dropdown open">
+                            <a class="dropdown-toggle" href="javascript:void(0);">
+                                <span class="icon-holder">
+                                    <i class="anticon anticon-appstore"></i>
+                                </span>
+                                <span class="title"><Main>Menu</Main></span>
+                            </a>
+                                <li>
+                                    <li class="nav-item dropdown open">
+                                        <a class="dropdown-toggle" href="javascript:void(0);">
+                                            <span class="icon-holder">
+                                                <i class="fas fa-user"></i>
+                                            </span>
+                                            <span class="title">Profile</span>
+                                            <span class="arrow">
+                                                <i class="arrow-icon"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{% url 'dashboard:profile_edit' %}">
+                                                    <i class="fas fa-user-edit"></i>
+                                                    Update
+                                                </a>
+                                                
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </li>
+                                
+                                <li>
+                                    <li class="nav-item dropdown open">
+                                        <a class="dropdown-toggle" href="javascript:void(0);">
+                                            <span class="icon-holder">
+                                                <i class="fas fa-user-friends"></i>
+                                            </span>
+                                            <span class="title">Staff</span>
+                                            <span class="arrow">
+                                                <i class="arrow-icon"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{% url 'dashboard:staff_create' %}">
+                                                    <i class="anticon anticon-plus-circle"></i>
+                                                    Create
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'dashboard:staff_list' %}">
+                                                    <i class="anticon anticon-bars"></i>
+                                                    List
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </li>
+                                <li>
+                                    <li class="nav-item dropdown open">
+                                        <a class="dropdown-toggle" href="javascript:void(0);">
+                                            <span class="icon-holder">
+                                                <i class="fas fa-user-check"></i>
+                                            </span>
+                                            <span class="title">Attendance</span>
+                                            <span class="arrow">
+                                                <i class="arrow-icon"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{% url 'dashboard:attendance_list' %}">
+                                                    <i class="anticon anticon-bars"></i>
+                                                    List
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </li>
+                        </li>
+                       
+                        
+                    </ul>
+                </div>
+            </div>
+            <!-- Side Nav END -->
+
+            <!-- Page Container START -->
+            <div class="page-container">
+                
+                {% block content %}
+                {% endblock %}
+                <!-- Footer START -->
+                <footer class="footer">
+                    <div class="footer-content">
+                        <p class="m-b-0">© 2024 </p>
+                        <span>
+                            <p>Shomalik Davlatov</p>
+                        </span>
+                    </div>
+                </footer>
+                <!-- Footer END -->
+
+            </div>
+            <!-- Page Container END -->
+
+        </div>
+    </div>
+
+    
+    <!-- Core Vendors JS -->
+    <script src="{% static 'dashboard/js/vendors.min.js' %}"></script>
+
+    <!-- page js -->
+    <script src="{% static 'dashboard/vendors/chartjs/Chart.min.js' %}"></script>
+    <script src="{% static 'dashboard/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static 'dashboard/js/pages/dashboard-project.js' %}"></script>
+    
+
+    <!-- Core JS -->
+    <script src="{% static 'dashboard/js/app.min.js' %}"></script>
+
+</body>
+
+</html>
